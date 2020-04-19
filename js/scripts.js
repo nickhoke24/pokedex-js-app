@@ -16,7 +16,9 @@ var pokemonList = [
     } 
 ];
 
-for (let i = 0; i < pokemonList.length; i++)
+for (var i = 0; i < pokemonList.length; i++)
     document.write(pokemonList[i].name + pokemonList[i].height)
-if (pokemonList[i].height > 1.0)
+if (pokemonList[i].height >= 1.0) {
     document.write("Wow, that's big!")
+}
+    
