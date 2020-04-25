@@ -16,9 +16,22 @@ var pokemonRepository = (function () {
       types: "water",
     },
   ];
+
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  function getAll() {
+    return pokemonList;
+  }
+
+  return {
+    add: add,
+    getAll: getAll,
+  };
 })();
 
-pokemonRepository.forEach(function (pokemon) {
+pokemonRepository.getAll(function (pokemon) {
   document.write(pokemon.name + " (Height " + pokemon.height + ")");
   if (pokemon.height > 1.0) {
     document.write(" - Wow, that's big!");
