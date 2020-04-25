@@ -38,3 +38,5 @@ pokemonRepository.getAll(function (pokemon) {
   }
   document.write("<br>");
 });
+
+document.write(pokemonRepository.getAll());
