@@ -16,18 +16,13 @@ var pokemonRepository = (function () {
       types: "water",
     },
   ];
-
-  function add(pokemon) {
-    pokemonList.push(pokemon);
-  }
-
-  function getAll() {
-    return pokemonList;
-  }
-
   return {
-    add: add,
-    getAll: getAll,
+    add: function (pokemon) {
+      pokemonList.push(pokemon);
+    },
+    getAll: function () {
+      return pokemonList;
+    },
   };
 })();
 
