@@ -31,12 +31,14 @@ var pokemonRepository = (function () {
   };
 })();
 
-pokemonRepository.getAll(function (pokemon) {
+console.log(pokemonRepository.getAll());
+pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
+console.log(pokemonRepository.getAll());
+
+pokemonRepository.getAll().forEach(function (pokemon) {
   document.write(pokemon.name + " (Height " + pokemon.height + ")");
   if (pokemon.height > 1.0) {
     document.write(" - Wow, that's big!");
   }
   document.write("<br>");
 });
-
-document.write(pokemonRepository.getAll());
