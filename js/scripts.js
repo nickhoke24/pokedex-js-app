@@ -8,17 +8,24 @@ var pokemonRepository = (function () {
     {
       name: "Charizard",
       height: 1.7,
-      types: "fire",
+      types: ["fire"],
     },
     {
       name: "Squirtle",
       height: 0.5,
-      types: "water",
+      types: ["water"],
     },
   ];
 
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types" in pokemon
+    ) {
+      pokemonList.push(pokemon);
+    }
   }
 
   function getAll() {
