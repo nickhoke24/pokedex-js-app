@@ -16,7 +16,7 @@ var pokemonRepository = (function () {
     return pokemonList;
   }
 
-  function addListItem(pokemon = {}) {
+  function addListItem(pokemon) {
     var pokedexList = document.querySelector(".pokemon-list");
     var listitem = document.createElement("li");
     var button = document.createElement("button");
@@ -30,7 +30,9 @@ var pokemonRepository = (function () {
   }
 
   function showDetails(pokemon) {
-    console.log(pokemon);
+    pokemonRepository.loadDetails(pokemon).then(function () {
+      console.log(pokemon);
+    });
   }
 
   function loadList() {
