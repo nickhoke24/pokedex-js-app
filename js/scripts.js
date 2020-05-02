@@ -1,6 +1,5 @@
 var pokemonRepository = (function () {
-  var pokemonList = [
-    {
+  var pokemonList = [{
       name: "Bulbasaur",
       height: 0.7,
       types: ["grass", "poison"],
@@ -49,6 +48,22 @@ var pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     console.log(pokemon);
+  }
+
+  function loadList() {
+    return fetch(apiUrl).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      json.results.forEach(function (item) {
+        var pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+      });
+    }).catch(function (e) {
+      console.error(e);
+    })
   }
 
   return {
