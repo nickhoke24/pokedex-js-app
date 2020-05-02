@@ -6,8 +6,7 @@ var pokemonRepository = (function () {
     if (
       typeof pokemon === "object" &&
       "name" in pokemon &&
-      "height" in pokemon &&
-      "types" in pokemon
+      "detailsUrl" in pokemon
     ) {
       pokemonList.push(pokemon);
     }
