@@ -85,6 +85,7 @@ var pokemonRepository = (function () {
     getAll: getAll,
     addListItem: addListItem,
     loadList: loadList,
+    loadDetails: loadDetails
   };
 })();
 
