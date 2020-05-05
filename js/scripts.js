@@ -132,13 +132,11 @@ var pokemonRepository = (function () {
   });
 
   return {
-    add: add,
-    getAll: getAll,
-    addListItem: addListItem,
-    loadList: loadList,
-    loadDetails: loadDetails,
-    showModal: showModal,
-    hideModal: hideModal,
+    add,
+    getAll,
+    addListItem,
+    loadList,
+    loadDetails,
   };
 })();
 
